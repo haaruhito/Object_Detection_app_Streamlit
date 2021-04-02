@@ -49,7 +49,8 @@ if choice == "Upload an image":
                     boxes.append([x,y,w,h])
                     confidences.append((float(confidence)))
                     class_ids.append(class_id)
-            indexes = cv2.dnn.NMSBoxes(boxes, confidences, 0.6,.4)
+        indexes = cv2.dnn.NMSBoxes(boxes, confidences, 0.6,.4)
+        a=""
 
         for i in range(len(boxes)):
             if i in indexes:
@@ -58,10 +59,12 @@ if choice == "Upload an image":
                 confidence = confidences[i]
                 color = colors[class_ids[i]]
                 cv2.rectangle(frame, (x,y), (x+w, y+h), color,2)
-                a = str(round(confidence,2))
+                a=a+" "+label
+                #a = str(round(confidence,2))
                 cv2.putText(frame, label + ' ' + str(round(confidence,2)), (x,y+30), font,1, color,2)
             
         st.image(frame)
+        st.write("Detected object: "+a)
 
 if choice == "Upload a video":
     st.sidebar.markdown("# Model")
