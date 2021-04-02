@@ -1,1 +1,1 @@
-# Object_Detection_app
+# object_detection_streamlit

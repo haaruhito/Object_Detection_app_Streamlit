@@ -125,7 +125,7 @@ if choice == "Choose your webcam":
     st.sidebar.markdown("# Model")
     confidence_threshold = st.sidebar.slider("Confidence threshold", 0.0, 1.0, 0.5, 0.01)
     run=st.sidebar.checkbox('Open/Close your Webcam')
-    video = cv2.VideoCapture(0)
+    video = cv2.VideoCapture(-1)
     frame_id = 0
     frame_window = st.image([])
     frame_text = st.markdown("")
