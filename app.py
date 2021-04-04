@@ -14,7 +14,8 @@ font = cv2.FONT_HERSHEY_PLAIN
 starting_time = time.time()
 
 st.title("Object Detection")
-st.markdown("In this app, you can upload an image, video or open your webcam. And this app will detect wallet or headphone in your table.")
+st.markdown("In this app, you can upload an image, video or open your webcam (The webcam works only when you download the docker image from dockerhub https://hub.docker.com/repository/docker/shrees/object_detection_app and run it in your local machine with required commands). And this app will detect two objects that is wallet or headphone. The accuracy is relatively ok however more training data is required.For better accuracy, you can use the images similar to sample images given below.")
+")
 st.markdown("Below are the sample images which can be detected.The accuracy of the detected images is printed in the image, video or your webcam.")
 
 st.image(["wallet.png","headphone1.png"], caption=["Sample picture of a Wallet","Sample picture of a Headphone"], width=300, use_column_width=None, clamp=False, channels='RGB', output_format='auto')
